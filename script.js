@@ -392,3 +392,153 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.style.opacity = '1';
 
 });
+
+
+
+/* ============================================================
+   9. CONTACT FORM — WHATSAPP SUBMISSION
+   ============================================================ */
+(function initContactForm() {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  const WHATSAPP_NUMBER = '916385554182';
+
+  const PROJECT_TYPE_LABELS = {
+    residential: 'Residential Construction',
+    commercial: 'Commercial Construction',
+    interior: 'Interior Design',
+    renovation: 'Renovation & Remodeling'
+  };
+
+  const BUDGET_LABELS = {
+    'under-25': 'Under ₹25 Lakhs',
+    '25-50': '₹25 - 50 Lakhs',
+    '50-100': '₹50 - 100 Lakhs',
+    '100-250': '₹100 - 250 Lakhs'
+  };
+
+  const TIMELINE_LABELS = {
+    immediate: 'Immediate (Next 3 months)',
+    '3-6': '3 - 6 Months',
+    '6-12': '6 - 12 Months',
+    planning: 'Still in Planning'
+  };
+
+  function buildWhatsAppMessage(data) {
+    const lines = [];
+    lines.push('Hello BANNA Construction! I would like to enquire about a project.');
+    lines.push('');
+    lines.push('*Name:* ' + data.name);
+    lines.push('*Email:* ' + data.email);
+    lines.push('*Phone:* ' + data.phone);
+
+    if (data.projectType) {
+      lines.push('*Project Type:* ' + (PROJECT_TYPE_LABELS[data.projectType] || data.projectType));
+    }
+    if (data.budget) {
+      lines.push('*Estimated Budget:* ' + (BUDGET_LABELS[data.budget] || data.budget));
+    }
+    if (data.timeline) {
+      lines.push('*Timeline:* ' + (TIMELINE_LABELS[data.timeline] || data.timeline));
+    }
+
+    lines.push('');
+    lines.push('*Project Details:*');
+    lines.push(data.message);
+
+    return lines.join('\n');
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalContent = submitBtn.innerHTML;
+
+    // Validate required fields
+    const requiredFields = form.querySelectorAll('[required]');
+    let firstInvalid = null;
+    
+    requiredFields.forEach(field => {
+      if (field.value.trim() === '') {
+        field.style.borderColor = '#ff6b6b';
+        if (!firstInvalid) firstInvalid = field;
+      }
+    });
+
+    if (firstInvalid) {
+      firstInvalid.focus();
+      return;
+    }
+
+    const formData = new FormData(form);
+    const data = {
+      name: (formData.get('name') || '').toString().trim(),
+      email: (formData.get('email') || '').toString().trim(),
+      phone: (formData.get('phone') || '').toString().trim(),
+      projectType: (formData.get('projectType') || '').toString().trim(),
+      budget: (formData.get('budget') || '').toString().trim(),
+      timeline: (formData.get('timeline') || '').toString().trim(),
+      message: (formData.get('message') || '').toString().trim()
+    };
+
+    // Update button state
+    submitBtn.innerHTML = '<span>Opening WhatsApp...</span> <i class="fa fa-spinner fa-spin"></i>';
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = '0.8';
+
+    const message = buildWhatsAppMessage(data);
+    const whatsappUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(message);
+
+    setTimeout(() => {
+      window.open(whatsappUrl, '_blank');
+
+      submitBtn.innerHTML = '<span>Redirected to WhatsApp!</span> <i class="fa fa-check"></i>';
+      submitBtn.style.background = 'linear-gradient(135deg, var(--secondary-lime), var(--secondary-lime-dark))';
+      submitBtn.style.color = 'var(--text-dark)';
+
+      const successMsg = document.createElement('div');
+      successMsg.style.cssText = `
+        margin-top: 20px;
+        padding: 16px 20px;
+        background: rgba(166, 206, 0, 0.1);
+        border: 1px solid var(--secondary-lime);
+        border-radius: 6px;
+        color: var(--secondary-lime);
+        font-size: 0.85rem;
+        text-align: center;
+      `;
+      successMsg.innerHTML = '<i class="fa fa-check-circle" style="margin-right:8px;"></i> Your enquiry was sent to WhatsApp. Continue the chat to finish.';
+      form.appendChild(successMsg);
+
+      setTimeout(() => {
+        form.reset();
+        submitBtn.innerHTML = originalContent;
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '';
+        submitBtn.style.background = '';
+        submitBtn.style.color = '';
+        if (successMsg.parentNode) successMsg.parentNode.removeChild(successMsg);
+      }, 5000);
+    }, 600);
+  });
+
+  // Input validation feedback
+  const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
+  inputs.forEach(input => {
+    input.addEventListener('blur', () => {
+      if (input.value.trim() === '') {
+        input.style.borderColor = '#ff6b6b';
+      } else {
+        input.style.borderColor = 'var(--primary-blue)';
+      }
+    });
+
+    input.addEventListener('input', () => {
+      if (input.value.trim() !== '') {
+        input.style.borderColor = 'var(--primary-blue)';
+      }
+    });
+  });
+})();
