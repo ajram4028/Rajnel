@@ -561,22 +561,20 @@ section { position:relative; overflow:hidden; }
   .process-steps{grid-template-columns:1fr;}
   .achievements-grid{grid-template-columns:1fr;}
 }
-
-/* ===============================
-   NAVBAR COMPANY LOGO
-================================= */
+/* ===========================
+   COMPANY LOGO
+=========================== */
 
 .nav-logo{
     display:flex;
     align-items:center;
-    text-decoration:none;
+    justify-content:center;
 }
 
 .company-logo{
-    width:75px;
+    width:140px;      /* Increase this value */
     height:auto;
     object-fit:contain;
-    display:block;
     transition:0.3s ease;
 }
 
@@ -585,21 +583,15 @@ section { position:relative; overflow:hidden; }
 }
 
 /* Tablet */
-
 @media (max-width:768px){
-
-.company-logo{
-    width:60px;
-}
-
+    .company-logo{
+        width:110px;
+    }
 }
 
 /* Mobile */
-
 @media (max-width:480px){
-
-.company-logo{
-    width:50px;
-}
-
+    .company-logo{
+        width:90px;
+    }
 }
