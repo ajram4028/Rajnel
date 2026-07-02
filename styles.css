@@ -1199,3 +1199,16 @@ section { position:relative; overflow:hidden; }
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
+
+
+/* Hide custom cursor on mobile and tablets */
+@media (max-width: 768px) {
+    .cursor,
+    .cursor-follower {
+        display: none !important;
+    }
+
+    body {
+        cursor: auto !important;
+    }
+}
