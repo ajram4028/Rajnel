@@ -64,105 +64,54 @@ document.addEventListener('DOMContentLoaded', () => {
       if (follower) { follower.style.width = '36px'; follower.style.height = '36px'; }
     });
   });
-/* ============================================================
-   NAVBAR
-============================================================ */
 
-const navbar = document.querySelector('.navbar');
-const hamburger = document.querySelector('.nav-hamburger');
-const navMenu = document.querySelector('.nav-menu');
+  /* ============================================================
+     NAVBAR
+     ============================================================ */
+  const navbar = document.querySelector('.navbar');
+  const hamburger = document.querySelector('.nav-hamburger');
+  const navMenu = document.querySelector('.nav-menu');
 
-// Create overlay automatically
-const overlay = document.createElement("div");
-overlay.className = "nav-overlay";
-document.body.appendChild(overlay);
-
-// Navbar Scroll
-window.addEventListener('scroll', () => {
-
-    navbar.classList.toggle('scrolled', window.scrollY > 60);
-
+  window.addEventListener('scroll', () => {
+    if (navbar) {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }
     toggleScrollTop();
+  });
 
-});
-
-// Hamburger
-
-hamburger.addEventListener('click', () => {
-
-    navMenu.classList.toggle('open');
-
-    overlay.classList.toggle('show');
-
-    const spans = hamburger.querySelectorAll('span');
-
-    if(navMenu.classList.contains('open')){
-
-        spans[0].style.transform = "rotate(45deg) translate(6px,6px)";
-        spans[1].style.opacity = "0";
-        spans[2].style.transform = "rotate(-45deg) translate(6px,-6px)";
-
-    }else{
-
-        spans[0].style.transform = "";
-        spans[1].style.opacity = "";
-        spans[2].style.transform = "";
-
-    }
-
-});
-
-// Close when clicking overlay
-
-overlay.addEventListener('click',()=>{
-
-    navMenu.classList.remove('open');
-
-    overlay.classList.remove('show');
-
-    const spans = hamburger.querySelectorAll('span');
-
-    spans[0].style.transform="";
-    spans[1].style.opacity="";
-    spans[2].style.transform="";
-
-});
-
-// Close after clicking menu
-
-document.querySelectorAll(".nav-link").forEach(link=>{
-
-    link.addEventListener("click",()=>{
-
-        navMenu.classList.remove("open");
-
-        overlay.classList.remove("show");
-
-        const spans = hamburger.querySelectorAll('span');
-
-        spans[0].style.transform="";
-        spans[1].style.opacity="";
-        spans[2].style.transform="";
-
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      const spans = hamburger.querySelectorAll('span');
+      if (navMenu.classList.contains('open')) {
+        spans[0].style.transform = 'rotate(45deg) translate(4px, 4px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(4px, -4px)';
+      } else {
+        spans[0].style.transform = '';
+        spans[1].style.opacity = '';
+        spans[2].style.transform = '';
+      }
     });
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        const spans = hamburger.querySelectorAll('span');
+        spans[0].style.transform = '';
+        spans[1].style.opacity = '';
+        spans[2].style.transform = '';
+      });
+    });
+  }
 
-});
-
-// Active Link
-
-const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-
-document.querySelectorAll('.nav-link').forEach(link=>{
-
+  // Active nav link
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-link').forEach(link => {
     const href = link.getAttribute('href');
-
-    if(href===currentPage){
-
-        link.classList.add('active');
-
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      link.classList.add('active');
     }
-
-});
+  });
 
   /* ============================================================
      SCROLL TO TOP
