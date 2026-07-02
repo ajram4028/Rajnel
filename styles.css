@@ -925,175 +925,242 @@ section { position:relative; overflow:hidden; }
 @media (max-width:480px){
     .company-logo{ width:90px; }
 }
-
 /* ============================================================
    RESPONSIVE
-   ============================================================ */
+============================================================ */
+
 @media (max-width:1200px){
-  .container{padding:0 40px;}
-  .navbar{padding:18px 40px;} .navbar.scrolled{padding:14px 40px;}
-  .hero-content{padding:140px 40px 100px;}
-  .hero-stats{right:40px;} .hero-scroll{left:40px;}
-  .footer-top{grid-template-columns:1fr 1fr; gap:40px;}
-}
-@media (max-width:900px){
-  .about-preview-inner{grid-template-columns:1fr;}
-  .contact-grid{grid-template-columns:1fr;}
-  .team-grid{grid-template-columns:1fr 1fr;}
-  .achievements-grid{grid-template-columns:1fr 1fr;}
-  .story-grid{grid-template-columns:1fr;}
-  .vm-grid{grid-template-columns:1fr;}
-}@media (max-width:768px){
 
-:root{
-    font-size:15px;
-}
+  .container{
+    padding:0 40px;
+  }
 
-.container{
-    padding:0 24px;
-}
+  .navbar{
+    padding:18px 40px;
+  }
 
-.navbar{
-    padding:16px 24px;
-}
+  .navbar.scrolled{
+    padding:14px 40px;
+  }
 
-.section-pad{
-    padding:80px 0;
-}
+  .hero-content{
+    padding:140px 40px 100px;
+  }
 
-.hero-stats{
-    display:none;
-}
+  .hero-stats{
+    right:40px;
+  }
 
-.process-steps{
+  .hero-scroll{
+    left:40px;
+  }
+
+  .footer-top{
     grid-template-columns:1fr 1fr;
+    gap:40px;
+  }
+
 }
 
-.team-grid{
+@media (max-width:900px){
+
+  .about-preview-inner{
     grid-template-columns:1fr;
-}
+  }
 
-.footer-top{
+  .contact-grid{
     grid-template-columns:1fr;
+  }
+
+  .team-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .achievements-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .story-grid,
+  .vm-grid{
+    grid-template-columns:1fr;
+  }
+
 }
 
-/* Hide desktop button */
-.nav-cta{
+@media (max-width:768px){
+
+  :root{
+    font-size:15px;
+  }
+
+  .container{
+    padding:0 24px;
+  }
+
+  .navbar{
+    padding:16px 24px;
+  }
+
+  .section-pad{
+    padding:80px 0;
+  }
+
+  .hero-stats{
     display:none;
-}
+  }
 
-/* Hamburger */
+  .process-steps{
+    grid-template-columns:1fr 1fr;
+  }
 
-.nav-hamburger{
+  .team-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-top{
+    grid-template-columns:1fr;
+  }
+
+  /* Hide Desktop Button */
+
+  .nav-cta{
+    display:none;
+  }
+
+  /* Hamburger */
+
+  .nav-hamburger{
     display:flex;
     flex-direction:column;
+    justify-content:center;
     gap:6px;
     cursor:pointer;
     z-index:10001;
-}
+  }
 
-.nav-hamburger span{
+  .nav-hamburger span{
     width:28px;
     height:3px;
+    background:#ffffff;
     border-radius:10px;
-    background:#fff;
-    transition:.35s;
-}
+    transition:.35s ease;
+  }
 
-/* Navigation Drawer */
+  /* Navigation Drawer */
 
-.nav-menu{
+  .nav-menu{
 
     position:fixed;
 
     top:0;
     left:-320px;
 
-    width:300px;
+    width:280px;
+    max-width:85%;
+
     height:100vh;
 
-    background:rgba(10,20,35,.98);
-
-    backdrop-filter:blur(25px);
-    -webkit-backdrop-filter:blur(25px);
+    background:#0A1423;
 
     display:flex;
-
     flex-direction:column;
-
     justify-content:flex-start;
-
     align-items:flex-start;
 
-    padding:120px 35px;
+    padding:110px 30px;
 
-    gap:26px;
+    gap:20px;
 
-    transition:.45s ease;
+    transition:left .35s ease;
+
+    overflow-y:auto;
 
     z-index:9999;
 
-    box-shadow:20px 0 50px rgba(0,0,0,.45);
-}
+    box-shadow:10px 0 30px rgba(0,0,0,.35);
 
-.nav-menu.open{
+  }
 
+  .nav-menu.open{
     left:0;
+  }
 
-}
-
-.nav-menu li{
-
+  .nav-menu li{
     width:100%;
-}
+    list-style:none;
+  }
 
-.nav-link{
+  .nav-link{
 
     display:block;
 
     width:100%;
 
-    padding:14px 0;
+    padding:15px 0;
 
-    color:#fff;
+    color:#ffffff;
 
     font-size:1rem;
 
+    font-weight:600;
+
+    letter-spacing:.08em;
+
     border-bottom:1px solid rgba(255,255,255,.08);
 
-}
+    transition:.3s;
 
-.nav-link:hover{
+  }
+
+  .nav-link:hover{
 
     color:#16C172;
 
-    padding-left:12px;
+    padding-left:10px;
+
+  }
 
 }
-}
+
 @media (max-width:480px){
-  .hero-content{padding:120px 24px 80px;}
-  .process-steps{grid-template-columns:1fr;}
-  .achievements-grid{grid-template-columns:1fr;}
+
+  .hero-content{
+    padding:120px 24px 80px;
+  }
+
+  .process-steps{
+    grid-template-columns:1fr;
+  }
+
+  .achievements-grid{
+    grid-template-columns:1fr;
+  }
+
 }
 
-
-/* =========================
-   Navbar Overlay
-========================= */
+/* ============================================================
+   NAV OVERLAY
+============================================================ */
 
 .nav-overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.45);
-    backdrop-filter:blur(3px);
-    opacity:0;
-    visibility:hidden;
-    transition:.35s;
-    z-index:9998;
+
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,.25);
+
+  opacity:0;
+  visibility:hidden;
+
+  transition:.35s ease;
+
+  z-index:9998;
+
 }
 
 .nav-overlay.show{
-    opacity:1;
-    visibility:visible;
+
+  opacity:1;
+  visibility:visible;
+
 }
