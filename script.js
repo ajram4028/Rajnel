@@ -374,22 +374,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ============================================================
-     SMOOTH PAGE TRANSITIONS
-     ============================================================ */
-  document.querySelectorAll('a[href]').forEach(link => {
-    const href = link.getAttribute('href');
-    if (href && !href.startsWith('#') && !href.startsWith('http') && !href.startsWith('tel') && !href.startsWith('mailto') && !href.startsWith('whatsapp')) {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.body.style.opacity = '0';
-        document.body.style.transition = 'opacity 0.35s ease';
-        setTimeout(() => { window.location.href = href; }, 350);
-      });
-    }
-  });
-
-  document.body.style.opacity = '1';
 
 });
 
