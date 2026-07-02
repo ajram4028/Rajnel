@@ -10,15 +10,19 @@
    CSS VARIABLES - BLUE-DOMINATED LIGHT THEME
    ============================================================ */
 :root {
-  /* BLUE — 50% (DOMINANT - Primary backgrounds) */
-  --blue-deep: #003D99;           /* Deep blue - Primary background */
-  --blue-navy: #004DAA;           /* Navy blue - Darker sections */
-  --blue-navy-2: #1E5BB8;         /* Medium blue - Cards on blue bg */
-  --blue-bright: #2563EB;         /* Bright blue - Buttons & accents */
-  --blue-light: #3B82F6;          /* Light blue - Secondary buttons */
-  --blue-accent: #1E40AF;         /* Dark blue - Text on light bg */
-  --blue-pale: rgba(37, 99, 235, 0.08);
-  --blue-glow: rgba(37, 99, 235, 0.35);
+ /* ============================================================
+   BRAND BLUE (Matches BANNA Logo)
+   ============================================================ */
+
+--blue-deep: #0077CC;            /* Main website background */
+--blue-navy: #0088DD;            /* Dark sections */
+--blue-navy-2: #0099E8;          /* Cards */
+--blue-bright: #00B8F8;          /* Exact logo blue */
+--blue-light: #35C7FF;           /* Hover */
+--blue-accent: #009FE8;          /* Buttons & highlights */
+
+--blue-pale: rgba(0, 184, 248, 0.08);
+--blue-glow: rgba(0, 184, 248, 0.35);
 
   /* GREEN — 20% (Accent) */
   --green: #A6CE00;
