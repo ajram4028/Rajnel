@@ -4,7 +4,7 @@
    LAYOUT SYSTEM: Bento Grid
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@800;900&display=swap');
 
 /* ============================================================
    CSS VARIABLES - BLUE-DOMINATED LIGHT THEME
@@ -128,7 +128,7 @@ input, textarea, select { outline:none; font-family: var(--font-body); }
 /* ============================================================
    LOADER
    ============================================================ */
-#loader { position:fixed; inset:0; background:var(--blue-deep); z-index:100000; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:26px; transition: opacity .8s, visibility .8s; }
+#loader { position:fixed; inset:0; background: #000000; z-index:100000; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:26px; transition: opacity .8s, visibility .8s; }
 #loader.hidden { opacity:0; visibility:hidden; }
 
 .loader-logo{
@@ -304,8 +304,7 @@ input, textarea, select { outline:none; font-family: var(--font-body); }
 
     transition:.35s ease;
 
-    box-shadow:
-        0 8px 25px rgba(166, 206, 0, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
 }
 
 .nav-cta:hover{
@@ -314,8 +313,7 @@ input, textarea, select { outline:none; font-family: var(--font-body); }
 
     transform:translateY(-3px);
 
-    box-shadow:
-        0 15px 35px rgba(22,193,114,.45);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
 /* =========================
@@ -384,14 +382,15 @@ input, textarea, select { outline:none; font-family: var(--font-body); }
     background:rgba(0,0,0,.25);
     z-index:1;
 }
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 140px 60px 100px;
+    width: 100%;
 
-.hero-content{
-    position:relative;
-    z-index:2;
-    max-width:1400px;
-    margin:0 auto;
-    padding:140px 60px 100px;
-    width:100%;
+    transform: translateY(-80px);
 }
 
 .hero-eyebrow{
@@ -446,30 +445,35 @@ input, textarea, select { outline:none; font-family: var(--font-body); }
     flex-wrap:wrap;
     align-items:center;
 }
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
 
-.btn-primary{
-    display:inline-flex;
-    align-items:center;
-    gap:12px;
-    background:var(--green);
-    color:#fff;
-    font-size:.64rem;
-    font-weight:700;
-    letter-spacing:.22em;
-    text-transform:uppercase;
-    padding:18px 38px;
-    border-radius:999px;
-    transition:var(--transition);
-    position:relative;
-    overflow:hidden;
-    box-shadow:0 8px 25px rgba(166, 206, 0, 1);
+    background: var(--green);
+    color: #fff;
+
+    font-size: .64rem;
+    font-weight: 700;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+
+    padding: 18px 38px;
+    border-radius: 999px;
+
+    transition: var(--transition);
+
+    /* NORMAL SOFT SHADOW */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
 }
+.btn-primary:hover {
+    background: var(--green);
+    color: #fff;
 
-.btn-primary:hover{
-    background:#fff;
-    color:var(--blue-deep);
-    box-shadow:0 8px 35px rgba(166, 206, 0, 1);
-    transform:translateY(-3px);
+    transform: translateY(-2px);
+
+    /* NO BRIGHT GLOW */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
 .btn-primary span{
@@ -1180,16 +1184,13 @@ section { position:relative; overflow:hidden; }
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
-
-
-
 .logo-b,
-.logo-anna{
-    font-family:'Cinzel Decorative', serif;
-    font-weight:900;
-    letter-spacing:4px;
-    line-height:1;
-    text-transform:uppercase;
+.logo-anna {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 1;
+    text-transform: uppercase;
 }
 
 .logo-b{
@@ -1249,4 +1250,144 @@ section { position:relative; overflow:hidden; }
     color:#fff;
 }
 
+.hero-title {
+    line-height: 1;
+}
 
+.hero-banna-logo {
+    width: 520px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    margin-bottom: -220px;
+}
+
+.hero-title-accent {
+    display: block;
+    margin-top: 0;
+}
+
+.hero-content {
+    position: relative;
+    top: -120px !important;
+}
+
+
+/* REMOVE BLUE SHADE — INTERIOR PAGE ONLY */
+
+body.interior-page .page-hero {
+    background: transparent !important;
+}
+
+body.interior-page .page-hero::before {
+    background: transparent !important;
+}
+
+/* REMOVE BLUE SHADE — CONSTRUCTION PAGE ONLY */
+
+body.construction-page .page-hero {
+    background: transparent !important;
+}
+
+body.construction-page .page-hero::before {
+    background: transparent !important;
+}
+
+
+/* CONSTRUCTION HERO BACKGROUND IMAGE */
+.construction-hero-img {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=85');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+    z-index: 0;
+}
+
+
+
+/* SERVICES PAGE HERO IMAGE */
+
+.services-hero-img {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=80');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+    z-index: 0;
+}
+
+.services-page .page-hero {
+    position: relative;
+    background: transparent !important;
+}
+
+.services-page .page-hero::before {
+    display: none !important;
+}
+
+.services-page .page-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ABOUT PAGE HERO IMAGE */
+
+.about-hero-img {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1920&q=85');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+    z-index: 0;
+}
+
+body.about-page .page-hero {
+    position: relative;
+    background: transparent !important;
+}
+
+body.about-page .page-hero::before {
+    display: none !important;
+}
+
+body.about-page .page-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* CONTACT PAGE HERO IMAGE */
+
+.contact-hero-img {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1920&q=85');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+    z-index: 0;
+}
+
+body.contact-page .page-hero {
+    position: relative;
+    background: transparent !important;
+}
+
+body.contact-page .page-hero::before {
+    display: none !important;
+}
+
+body.contact-page .page-hero-content {
+    position: relative;
+    z-index: 2;
+}
