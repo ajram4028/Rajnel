@@ -1391,3 +1391,68 @@ body.contact-page .page-hero-content {
     position: relative;
     z-index: 2;
 }
+
+
+
+/* =========================================
+   MOBILE HERO FIX ONLY
+========================================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 100svh;
+        height: auto;
+    }
+
+    .hero-content {
+        top: 0 !important;
+        transform: none !important;
+        padding: 90px 24px 100px !important;
+    }
+
+    .hero-title {
+        margin: 0 0 22px 0 !important;
+        line-height: 1 !important;
+    }
+
+    .hero-banna-logo {
+        width: 290px !important;
+        max-width: 90% !important;
+        height: auto !important;
+        margin: 0 0 12px 0 !important;
+        display: block !important;
+    }
+
+    .hero-title-accent {
+        display: block !important;
+        font-size: clamp(3rem, 13vw, 4.5rem) !important;
+        line-height: 0.95 !important;
+        margin: 0 !important;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem !important;
+        line-height: 1.7 !important;
+        margin: 28px 0 32px !important;
+        max-width: 100% !important;
+    }
+
+    .hero-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+        width: 100% !important;
+    }
+
+    .hero-actions .btn-primary,
+    .hero-actions .btn-outline {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 18px 20px !important;
+    }
+
+    .hero-scroll {
+        display: none !important;
+    }
+}
