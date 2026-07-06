@@ -1482,3 +1482,11 @@ body.contact-page .page-hero-content {
     }
 }
 
+@media (max-width: 768px) {
+    .hero-title-accent {
+        font-family: 'Roboto Slab', serif !important;
+        font-style: normal !important;
+        font-weight: 900 !important;
+        letter-spacing: -2px !important;
+    }
+}
