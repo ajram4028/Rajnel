@@ -1473,11 +1473,10 @@ body.contact-page .page-hero-content {
         position: relative !important;
         top: 0 !important;
     }
-
-    .hero-title-accent {
-        margin-top: -30px !important;
-        transform: translateY(-30px) !important;
-    }
+.hero-title-accent {
+    margin-top: -45px !important;
+    transform: translateY(-45px) !important;
+}
 
     .hero-subtitle {
         margin-top: -15px !important;
