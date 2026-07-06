@@ -1481,3 +1481,12 @@ body.contact-page .page-hero-content {
         margin-top: -15px !important;
     }
 }
+
+
+@media (max-width: 768px) {
+    .logo-b,
+    .logo-anna {
+        font-size: 6.5rem !important;
+        line-height: 0.8 !important;
+    }
+}
