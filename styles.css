@@ -1456,3 +1456,30 @@ body.contact-page .page-hero-content {
         display: none !important;
     }
 }
+
+
+@media (max-width: 768px) {
+
+    .hero-content {
+        padding-top: 45px !important;
+    }
+
+    .hero-title {
+        margin-bottom: 15px !important;
+    }
+
+    .logo-b,
+    .logo-anna {
+        position: relative !important;
+        top: 0 !important;
+    }
+
+    .hero-title-accent {
+        margin-top: -30px !important;
+        transform: translateY(-30px) !important;
+    }
+
+    .hero-subtitle {
+        margin-top: -15px !important;
+    }
+}
