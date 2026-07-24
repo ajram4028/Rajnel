@@ -1500,3 +1500,8 @@ body.contact-page .page-hero-content {
     font-weight: 400 !important;
     letter-spacing: -2px !important;
 }
+
+/* Remove all service icons */
+.service-icon{
+    display: none !important;
+}
