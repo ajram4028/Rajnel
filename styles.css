@@ -1505,3 +1505,17 @@ body.contact-page .page-hero-content {
 .service-icon{
     display: none !important;
 }
+
+
+
+@media (max-width:900px){ 
+  .services-grid{ 
+    grid-template-columns: repeat(2,1fr); 
+    grid-auto-rows: minmax(220px, auto);
+  } 
+  .service-card:nth-child(n){ 
+    grid-column: span 2; 
+    grid-row:auto; 
+    justify-content:flex-start;
+  } 
+}
