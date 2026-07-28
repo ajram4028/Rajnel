@@ -616,7 +616,7 @@ section { position:relative; overflow:hidden; }
 .about-features { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:36px; }
 .about-feature { display:flex; gap:14px; align-items:flex-start; padding:20px; background: rgba(255,255,255,0.08); border-radius: var(--radius-sm); border:1px solid rgba(255,255,255,0.12); transition: var(--transition); }
 .about-feature:hover { background: rgba(255,255,255,0.15); transform: translateY(-4px); box-shadow: var(--shadow-blue); }
-.about-feature-icon { width:36px; height:36px; border-radius:10px; background:var(--green); display:flex; align-items:center; justify-content:center; color:#fff; font-size:.85rem; flex-shrink:0; }
+.about-feature-icon { width:36px; height:36px; border-radius:10px; background:var(--green); display:flex; align-items:center; justify-content:center; color:#000; font-size:.85rem; flex-shrink:0; }
 .about-feature-text h4 { font-size:.7rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#fff; margin-bottom:4px; }
 .about-feature-text p { font-size:.8rem; color:rgba(255,255,255,0.8); }
 
@@ -821,7 +821,7 @@ section { position:relative; overflow:hidden; }
 .services-full { background: var(--blue-deep); padding:100px 0; }
 .services-category { margin-bottom:80px; }
 .category-header { display:flex; align-items:center; gap:22px; margin-bottom:38px; padding-bottom:22px; border-bottom:1px solid rgba(255,255,255,0.1); }
-.category-icon { width:56px; height:56px; border-radius:16px; background: var(--green); display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.3rem; }
+.category-icon { width:56px; height:56px; border-radius:16px; background: var(--green); display:flex; align-items:center; justify-content:center; color:#000; font-size:1.3rem; }
 .category-title { font-family:var(--font-display); font-size:1.9rem; font-weight:600; color:#fff; }
 .category-title span { color: var(--green); font-style:italic; }
 .services-cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; }
@@ -874,7 +874,7 @@ section { position:relative; overflow:hidden; }
 .vm-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:50px; }
 .vm-card { background: #fff; border:1px solid rgba(0,61,153,0.1); border-radius: var(--radius); padding:54px 46px; transition:var(--transition); color:var(--text-dark); }
 .vm-card:hover { transform:translateY(-6px); border-color: var(--green); box-shadow: var(--shadow-green); }
-.vm-icon { width:54px; height:54px; border-radius:14px; background: var(--green); display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.5rem; margin-bottom:22px; }
+.vm-icon { width:54px; height:54px; border-radius:14px; background: var(--green); display:flex; align-items:center; justify-content:center; color:#000; font-size:1.5rem; margin-bottom:22px; }
 .vm-title { font-family:var(--font-display); font-size:1.4rem; font-weight:600; color:var(--text-dark); margin-bottom:18px; }
 .vm-text { font-family:var(--font-head); font-size:.98rem; font-weight:300; font-style:italic; color:var(--text-light); line-height:1.9; }
 
@@ -906,7 +906,7 @@ section { position:relative; overflow:hidden; }
 .contact-info-items { display:flex; flex-direction:column; gap:14px; margin-bottom:36px; }
 .contact-item { display:flex; gap:18px; align-items:flex-start; padding:20px; background: #fff; border:1px solid rgba(0,61,153,0.1); border-radius: var(--radius-sm); transition:var(--transition); color:var(--text-dark); }
 .contact-item:hover { transform:translateX(8px); border-color: var(--green); }
-.contact-item-icon { width:44px; height:44px; border-radius:12px; background: var(--green); display:flex; align-items:center; justify-content:center; color:#fff; font-size:.95rem; flex-shrink:0; }
+.contact-item-icon { width:44px; height:44px; border-radius:12px; background: var(--green); display:flex; align-items:center; justify-content:center; color:#000; font-size:.95rem; flex-shrink:0; }
 .contact-item-label { font-size:.58rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color: var(--green); margin-bottom:6px; }
 .contact-item-value { font-size:.88rem; color:var(--text-dark); line-height:1.7; }
 
